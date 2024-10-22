@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review</title>
+    <link rel="stylesheet" th:href="@{/CSS/styles.css}">
+    <link rel="stylesheet" th:href="@{/CSS/images.css}">
+</head>
+<body>
+
+<div>
+    <a href="/"><button class="back_Button">Back</button></a>
+</div>
+
+    <table class="movie_table">
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Genre</th>
+            <th>Rating</th>
+        </tr>
+
+        <tr>
+            <td th:text="${movie.title}"></td>
+            <td th:text="${movie.year}"></td>
+            <td th:text="${movie.director}"></td>
+            <td th:text="${movie.genre}"></td>
+            <td th:text="${movie.myRating}"></td>
+        </tr>
+
+        <tr>
+            <th colspan="5" style="text-align: center; padding-top: 20px" >Review</th>
+        </tr>
+
+        <tr>
+            <td colspan="5">
+                <div class="review_box" th:text="${movie.myReview}"></div>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

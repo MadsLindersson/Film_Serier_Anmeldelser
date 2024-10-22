@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/CSS/styles.css}">
+    <link rel="stylesheet" th:href="@{/CSS/images.css}">
+</head>
+
+<script>
+    function confirmDeletion()  {
+        return confirm ("Are you sure you want to delete this movie?")
+    }
+</script>
+
+<body>
+
+<div>
+    <a href="/CreateMoviePage"><button class="create_Review_Button">Create review</button></a>
+</div>
+
+<div class="scrollable-content">
+
+    <table class="movie_table">
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Genre</th>
+            <th>Rating</th>
+        </tr>
+        <tr th:each="movie : ${Movies}">
+            <td th:text="${movie.title}"></td>
+            <td th:text="${movie.year}"></td>
+            <td th:text="${movie.director}"></td>
+            <td th:text="${movie.genre}"></td>
+            <td th:text="${movie.myRating}" style="text-align: center"></td>
+            <td>
+                <form action="/showReview" method="get">
+                    <input type="hidden" name="movieId" th:value="${movie.ID}">
+                    <button class="review_Button">See review</button>
+                </form>
+            </td>
+
+            <td>
+                <form action="/editWithoutReview" method="get">
+                    <input type="hidden" name="movieId" th:value="${movie.ID}">
+                    <button class="review_Button">Edit</button>
+                </form>
+            </td>
+
+            <td>
+                <form action="/deleteMovie" method="post" onsubmit="return confirmDeletion()">
+                    <input type="hidden" name="movieId" th:value="${movie.ID}">
+                    <button class="delete_button"> &#128465; </button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

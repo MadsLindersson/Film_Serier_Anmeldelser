@@ -1,0 +1,210 @@
+.movie_table {
+    position: absolute;
+    top: 15%;
+    bottom: 30%;
+    left: 15%;
+    right: 16%;
+
+    background-color: #efefef;                  /* White background to simulate the "screen" */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);  /* Add shadow for the screen effect */
+    padding: 20px;
+    border-radius: 20px;                      /* Optional: Slight rounding for the screen edges */
+    overflow-y: auto;                         /* Allow vertical scrolling inside the content */
+    overflow-x: hidden;                       /* Prevent horizontal scrolling */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;/* Start content from the top */
+}
+
+/* Optional styling for any table content inside the movie_table */
+.movie_table table {
+    width: 100%;                              /* Make the table take full width of the container */
+    height: auto;
+    border-collapse: collapse;
+}
+
+.movie_table th, .movie_table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Optional style for top buttons or other elements */
+.homePage_boxOfButtons {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    position: relative;                       /* Keep it positioned inside the content */
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.homePage_boxOfButtons {
+    background-color: white;
+    text-align: center;
+    color: black;          /* Ensure the text is visible on the background */
+    padding: 10px;        /* Adjust padding as needed */
+    width: 100%;          /* Set the width to 100% to cover the top */
+    height: 60px;         /* Set a fixed height for the top bar */
+    position: fixed;      /* Position it fixed to the top */
+    top: 2vh;               /* Align it to the top */
+    left: 0;              /* Align it to the left */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for a nice effect */
+    z-index: 1000;        /* Ensure it stays above other content */
+}
+
+.createMovie_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers all children horizontally */
+    background-color: white;
+    text-align: center;
+    color: black;
+    padding: 10px;
+    width: 40vh;
+    height: 75vh;
+    margin-top: 10vh;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 10);
+}
+
+.review_Button  {
+        background-color: #B0C5A4;
+        border: 2px solid #240A34;
+        border-radius: 10px;
+        color: black;
+        padding: 6px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+}
+
+.review_Button:hover    {
+    background-color: darkolivegreen;
+    transform: scale(1.1);
+}
+
+.submitButton {
+    background-color: #B0C5A4;
+    border: 2px solid #240A34;
+    border-radius: 10px;
+    color: black;
+    padding: 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 1px 2px;
+    cursor: pointer;
+}
+
+.submitButton:hover    {
+    background-color: darkolivegreen;
+    transform: scale(1.1);
+}
+
+.inputFieldForCreateMoviePage {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 10);
+}
+
+.descriptionFieldForCreateMoviePage {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 250px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 10);
+    resize: none;
+}
+
+.delete_button  {
+    background-color: #B0C5A4;
+    border: 2px solid #240A34;
+    border-radius: 10px;
+    color: black;
+    padding: 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 1px 2px;
+    cursor: pointer;
+}
+
+.delete_button:hover    {
+    background-color: darkolivegreen;
+    transform: scale(1.5);
+}
+
+.review_box {
+    .review-box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+}
+
+.scrollable-content {
+    height: 100%;                             /* Full height of the movie_table */
+    overflow-y: auto;                         /* Allow vertical scrolling here */
+    padding-right: 15px;                     /* Space for the scrollbar */
+}
+
+/* Hide scrollbar in webkit browsers */
+.scrollable-content::-webkit-scrollbar {
+    width: 0;                                 /* Set width to 0 to hide */
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+    background: transparent;                  /* No background for thumb */
+}
+
+.create_Review_Button  {
+    position: absolute;
+    top: 50px;
+    left: 48%;
+
+    background-color: #B0C5A4;
+    border: 2px solid #240A34;
+    border-radius: 10px;
+    color: black;
+    padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.back_Button  {
+    position: absolute;
+    top: 50px;
+    left: 10%;
+
+    background-color: #B0C5A4;
+    border: 2px solid #240A34;
+    border-radius: 10px;
+    color: black;
+    padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

@@ -1,0 +1,35 @@
+/* Set the background image for the entire body (stationary) */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/Image/movie_theater_full_bigger.jpg');  /* Movie theater background */
+    background-size: cover;                   /* Ensure it covers the full screen */
+    background-position: center;              /* Center the background image */
+    background-repeat: no-repeat;             /* Prevent repeating */
+    background-attachment: fixed;             /* Keep the background fixed */
+    height: 100vh;                            /* Full height of the viewport */
+    display: flex;
+    justify-content: center;                  /* Center the content horizontally */
+    align-items: center;                      /* Center the content vertically */
+    overflow: hidden; /* Hide overflow */
+}
+
+.content {
+    width: 60%;                               /* Width for the content block */
+    margin-top: 50px;                         /* Add margin from top */
+    padding: 20px;
+}
+
+/* Image that moves down with the content */
+.image-container {
+    width: 100%;                              /* Match the width of the table */
+    text-align: center;
+
+}
+
+.image-container img {
+    width: 70vh;                          /* Make sure the image doesn't exceed the container width */
+    height: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 10);     /* Maintain aspect ratio */
+    border-radius: 10px;
+}

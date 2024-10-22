@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Movie</title>
+  <link rel="stylesheet" th:href="@{/CSS/images.css}">
+  <link rel="stylesheet" th:href="@{/CSS/styles.css}">
+</head>
+<body>
+
+<div>
+  <a href="/"><button class="back_Button">Back</button></a>
+</div>
+
+<form action="/CreateMoviePage" method="post" class="movie_table">
+<!--  <label for="title">Enter title:</label>-->
+  <input type="text" id="title" name="title" placeholder="Enter full title here" class="inputFieldForCreateMoviePage" >
+
+<!--  <label for="title">Enter release date:</label>-->
+  <input type="number" id="year" name="year" placeholder="Enter release date" class="inputFieldForCreateMoviePage" >
+
+<!--  <label for="title">Enter the name of the director:</label>-->
+  <input type="text" id="director" name="director" placeholder="Enter the name of the director" class="inputFieldForCreateMoviePage" >
+
+<!--  <label for="title">Enter the genre of the movie:</label>-->
+  <input type="text" id="genre" name="genre" placeholder="Enter the genre of the movie" class="inputFieldForCreateMoviePage" >
+
+<!--  <label for="rating">Rate the movie 1-5</label>-->
+  <select id="rating" name="myRating" class="inputFieldForCreateMoviePage" style="width: 92%" >
+    <option value="" disabled selected>Select 1-5</option>
+    <option value="1">1 - Very bad</option>
+    <option value="2">2 - Bad</option>
+    <option value="3">3 - Fine</option>
+    <option value="4">4 - Good</option>
+    <option value="5">5 - Very good</option>
+  </select>
+
+<!--  <label for="myReview"> Enter your review of the movie </label>-->
+  <textarea id="myReview" name="myReview" class="descriptionFieldForCreateMoviePage" placeholder="Enter your review of the movie"></textarea>
+
+  <input type="submit" value="Create movie" class="submitButton">
+
+</form>
+
+</body>
+</html>
