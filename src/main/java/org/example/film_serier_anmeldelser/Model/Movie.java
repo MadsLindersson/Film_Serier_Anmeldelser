@@ -1,6 +1,6 @@
 package org.example.film_serier_anmeldelser.Model;
 
-public class Movie {
+public class Movie  {
 
     private int ID;
     private String title;
@@ -70,4 +70,5 @@ public class Movie {
     public void setID(int ID) {
         this.ID = ID;
     }
+
 }

@@ -1,6 +1,7 @@
 package org.example.film_serier_anmeldelser.Controller;
 
 import org.example.film_serier_anmeldelser.Model.Movie;
+import org.example.film_serier_anmeldelser.Model.MovieComparator;
 import org.example.film_serier_anmeldelser.Service.MovieRepo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,17 +10,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
 public class HomeController {
 
     @GetMapping("/")
-    public String home(Model model) {
+    public String home(@RequestParam (value="sort", required = false, defaultValue = "1") int sort, Model model) {
 
         List<Movie> movieRepo = MovieRepo.getAllMovies();
 
+        Collections.sort(movieRepo, MovieComparator.getComparator(sort));
+
         model.addAttribute("Movies", movieRepo);
+        model.addAttribute("selectedSort", sort);
 
         return "Home";
     }
@@ -44,7 +50,7 @@ public class HomeController {
 
         return "redirect:/";
     }
-//todo Virker ikke - Ser ud til at der returneres en null movie - men metoden får fat i en movie i DB...
+
     @GetMapping("/showReview")
     public String showReview(@RequestParam("movieId") int movieId, Model model)    {
 

@@ -158,21 +158,6 @@
     }
 }
 
-.scrollable-content {
-    height: 100%;                             /* Full height of the movie_table */
-    overflow-y: auto;                         /* Allow vertical scrolling here */
-    padding-right: 15px;                     /* Space for the scrollbar */
-}
-
-/* Hide scrollbar in webkit browsers */
-.scrollable-content::-webkit-scrollbar {
-    width: 0;                                 /* Set width to 0 to hide */
-}
-
-.scrollable-content::-webkit-scrollbar-thumb {
-    background: transparent;                  /* No background for thumb */
-}
-
 .create_Review_Button  {
     position: absolute;
     top: 50px;
@@ -201,6 +186,24 @@
     border-radius: 10px;
     color: black;
     padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.sort_dropdown    {
+    position: absolute;
+    top: 11%;
+    left: 26%;
+
+    background-color: #B0C5A4;
+    border: 2px solid #240A34;
+    border-radius: 10px;
+    color: black;
+    padding: 0px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

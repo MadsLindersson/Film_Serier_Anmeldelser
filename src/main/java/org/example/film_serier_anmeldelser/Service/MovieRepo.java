@@ -126,6 +126,7 @@ public final class MovieRepo {
     }
 
     public static void editWithoutReview (Movie movie, int movieId) {
+
             try (Connection con = getConnection())  {
                 if (con == null) {
                     System.out.println("Failed to establish database connection.");
@@ -136,8 +137,8 @@ public final class MovieRepo {
                         "year = ?, " +
                         "director = ?, " +
                         "genre = ?, " +
-                        "myRating = ?, " +
-                        "WHERE ID = ?,");
+                        "myRating = ? " +
+                        "WHERE ID = ?");
 
                 ps.setString(1, movie.getTitle());
                 ps.setInt(2, movie.getYear());

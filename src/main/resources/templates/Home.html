@@ -18,44 +18,82 @@
     <a href="/CreateMoviePage"><button class="create_Review_Button">Create review</button></a>
 </div>
 
-<div class="scrollable-content">
+<form action="/" method="get">
+    <select id="sort" name="sort" class="sort_dropdown" onchange="this.form.submit()">
+        <option value="" hidden="hidden" th:selected="${selectedSort != 1 && selectedSort != 2}">Title</option>
+        <option value="1" th:selected="${selectedSort == 1}"> Title asc</option>
+        <option value="2" th:selected="${selectedSort == 2}"> Title desc</option>
+    </select>
+</form>
 
-    <table class="movie_table">
-        <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Director</th>
-            <th>Genre</th>
-            <th>Rating</th>
-        </tr>
-        <tr th:each="movie : ${Movies}">
-            <td th:text="${movie.title}"></td>
-            <td th:text="${movie.year}"></td>
-            <td th:text="${movie.director}"></td>
-            <td th:text="${movie.genre}"></td>
-            <td th:text="${movie.myRating}" style="text-align: center"></td>
-            <td>
-                <form action="/showReview" method="get">
-                    <input type="hidden" name="movieId" th:value="${movie.ID}">
-                    <button class="review_Button">See review</button>
-                </form>
-            </td>
+<form>
+    <select id="sort2" name="sort" class="sort_dropdown" onchange="this.form.submit()" style="left: 46%;">
+        <option value="" hidden="hidden" th:selected="${selectedSort != 3 && selectedSort != 4}">Director</option>
+        <option value="3" th:selected="${selectedSort == 3}"> Director asc</option>
+        <option value="4" th:selected="${selectedSort == 4}"> Director desc</option>
+    </select>
+</form>
 
-            <td>
-                <form action="/editWithoutReview" method="get">
-                    <input type="hidden" name="movieId" th:value="${movie.ID}">
-                    <button class="review_Button">Edit</button>
-                </form>
-            </td>
+<form>
+    <select id="sort3" name="sort" class="sort_dropdown" onchange="this.form.submit()" style="left: 56%;">
+        <option value="" hidden="hidden" th:selected="${selectedSort != 5 && selectedSort != 6}">Genre</option>
+        <option value="5" th:selected="${selectedSort == 5}"> Genre asc</option>
+        <option value="6" th:selected="${selectedSort == 6}"> Genre desc</option>
+    </select>
+</form>
 
-            <td>
-                <form action="/deleteMovie" method="post" onsubmit="return confirmDeletion()">
-                    <input type="hidden" name="movieId" th:value="${movie.ID}">
-                    <button class="delete_button"> &#128465; </button>
-                </form>
-            </td>
-        </tr>
-    </table>
-</div>
+<form>
+    <select id="sort4" name="sort" class="sort_dropdown" onchange="this.form.submit()" style="left: 62%;">
+        <option value="" hidden="hidden" th:selected="${selectedSort != 7 && selectedSort != 8}">Rating</option>
+        <option value="7" th:selected="${selectedSort == 7}"> Rating asc</option>
+        <option value="8" th:selected="${selectedSort == 8}"> Rating desc</option>
+    </select>
+</form>
+
+<form>
+    <select id="sort5" name="sort" class="sort_dropdown" onchange="this.form.submit()" style="left: 38%;">
+        <option value="" hidden="hidden" th:selected="${selectedSort != 9 && selectedSort != 10}">Year</option>
+        <option value="9" th:selected="${selectedSort == 9}"> Year asc</option>
+        <option value="10" th:selected="${selectedSort == 10}"> Year desc</option>
+    </select>
+</form>
+
+<table class="movie_table">
+    <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Director</th>
+        <th>Genre</th>
+        <th>Rating</th>
+    </tr>
+    <tr th:each="movie : ${Movies}">
+        <td th:text="${movie.title}"></td>
+        <td th:text="${movie.year}"></td>
+        <td th:text="${movie.director}"></td>
+        <td th:text="${movie.genre}"></td>
+        <td th:text="${movie.myRating}" style="text-align: center"></td>
+        <td>
+            <form action="/showReview" method="get">
+                <input type="hidden" name="movieId" th:value="${movie.ID}">
+                <button class="review_Button">See review</button>
+            </form>
+        </td>
+
+        <td>
+            <form action="/editWithoutReview" method="get">
+                <input type="hidden" name="movieId" th:value="${movie.ID}">
+                <button class="review_Button">Edit</button>
+            </form>
+        </td>
+
+        <td>
+            <form action="/deleteMovie" method="post" onsubmit="return confirmDeletion()">
+                <input type="hidden" name="movieId" th:value="${movie.ID}">
+                <button class="delete_button"> &#128465; </button>
+            </form>
+        </td>
+    </tr>
+</table>
+
 </body>
 </html>
